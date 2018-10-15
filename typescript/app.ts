@@ -1,12 +1,14 @@
-let message: string ="Help ,e Obi-Wan Kenobe. You're my only hope!";
-console.log(message)
-let episode: number = 4
+import{Spacecraft, Containership} from './base-ship'
+import{MillenniumFalcon} from './starfighters'
 
-console.log("This is episode " + 4)
-episode = episode + 1
-console.log("Next episode in " + episode)
+import * as _ from 'lodash'
+console.log(_.pad("Typescript Examples", 60, "="))
+let ship = new Spacecraft('hyperdrive')
+ship.jumpIntoHyperspace()
 
-let favoriteDroid :string
-favoriteDroid = 'BB-8'
-console.log("My favorite droid is " + favoriteDroid)
+let falcon = new MillenniumFalcon()
+falcon.jumpIntoHyperspace()
 
+
+let goodForTheJob = (ship : Containership) => ship.cargoContainers > 2
+console.log(`Is falcon good for the job? ${goodForTheJob (falcon) ? 'Yes' : 'No'}`)
